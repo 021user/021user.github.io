@@ -1,0 +1,540 @@
+
+/* Importations Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Style pour rendre un élément visible au survol d'un parent avec la classe "group" */
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+
+/* Styles personnalisés */
+/* Reset des styles par défaut */
+* {
+  box-sizing: border-box; /* Box-sizing pour inclure les bordures et le padding dans la largeur et la hauteur */
+  text-decoration: none;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Styles du corps de la page */
+body {
+  min-height: 120vh;
+  color: var(--text);
+  background-color: var(--background);
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+/* Définition des variables de couleur */
+:root {
+  --text: #1D1D1F; /* Noir presque complet pour le texte, offrant une excellente lisibilité */
+  --background: #FAFAFA; /* Un fond très clair, presque blanc, pour un aspect propre et épuré */
+  --primary: #007AFF; /* Bleu Apple pour les éléments interactifs, vif et engageant */
+  --secondary: #F2F2F7; /* Gris très clair pour les éléments secondaires, ajoutant de la profondeur tout en restant subtil */
+  --accent: #AEAEB2; /* Gris moyen pour les éléments d'accentuation, fournissant un contraste doux */
+  
+}
+
+/* Styles pour le scroll en douceur */
+html, body {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styles de l'en-tête de la page */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+/* Styles de la liste de navigation */
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styles des liens de navigation */
+a.MENU {
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+/* Styles de la navigation */
+nav a {
+  position: relative;
+  font-size: 1.1em;
+  color: var(--secondary);
+  text-decoration: none;
+  padding: 6px 20px;
+  transition: 0.5s;
+}
+
+/* Styles au survol des liens de navigation */
+nav a:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Styles pour la carte d'étudiant */
+.StudentCard {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styles pour la première carte d'information */
+.card1 {
+  max-width: 700px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(var(--text), 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  opacity: 0.75;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+section.card {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.card svg {
+  fill: #000;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 3px;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #000000;
+  background-color: #f2f2f2;
+  color: #ffffff;
+}
+
+.card__content {
+  color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .card__content {
+  transform: rotateX(0deg);
+}
+
+.card__title {
+  margin: 0;
+  padding-left: 5px;
+  font-size: 24px;
+  color: #000000;
+  font-weight: 700;
+}
+
+.card:hover svg {
+  scale: 0;
+}
+
+.card__description {
+  margin:  0 0;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+
+  color: #000000;
+  line-height: 1.4;
+}
+/* Commands to change the shadows in dark mode
+@media (prefers-color-scheme: dark) {
+  .card:hover {
+  box-shadow: 0 8px 16px #000000;
+  }
+}*/
+
+
+/* Styles pour le titre de la carte d'étudiant */
+.StudentCard h1 {
+  color: #5b5959;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+}
+
+/* Styles pour le titre global */
+h1 {
+  padding-top: 50px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+/* Styles pour le conteneur de cartes */
+.container {
+  position: relative;
+  width: 900px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Styles pour une carte */
+.container .card {
+  position: relative;
+  width: 250px;
+  background: linear-gradient(0deg, #1b1b1b, #222, #1b1b1b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border-radius: 4px;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* Styles pour le cercle derrière la carte */
+.card:before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #4a4a4a;
+  border-radius: 
+
+50%;
+  top: -50px;
+  left: -50px;
+  z-index: -1;
+}
+
+/* Styles au survol de la carte */
+.container .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.5);
+}
+
+/* Styles pour le pourcentage au survol */
+.card .percent {
+  transform: scale(1.2);
+}
+
+/* Styles pour le pourcentage global */
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #000;
+  background: #222;
+}
+
+/* Styles pour le numéro du pourcentage */
+.percent .num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* Styles pour le numéro du pourcentage en h2 */
+.percent .num h2 {
+  color: #777;
+  font-weight: 700;
+  font-size: 40px;
+  transition: 0.5s;
+}
+
+/* Styles au survol du numéro du pourcentage */
+.card:hover .percent .num h2 {
+  color: #fff;
+  font-size: 60px;
+}
+
+/* Styles pour la partie supplémentaire du numéro du pourcentage */
+.percent .num h2 span {
+  color: #777;
+  font-size: 24px;
+  transition: 0.5s;
+}
+
+/* Styles au survol de la partie supplémentaire du numéro du pourcentage */
+.card:hover .percent .num h2 span {
+  color: #fff;
+}
+
+/* Styles pour le texte sous la carte */
+.text {
+  position: relative;
+  color: #777;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+/* Styles au survol du texte sous la carte */
+.card:hover .text {
+  color: #fff;
+}
+
+/* Styles pour la section de contact */
+#caption {
+  padding-top: 45px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Styles pour le bouton de téléchargement */
+.dnbtn {
+  border: 2px solid #0ff;
+  border-radius: 50px;
+  position: absolute;
+  color: #0ff;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px 0 0 0;
+  width: 50px;
+  height: 25px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+/* Styles pour l'icône de téléchargement */
+.dnbtn:before {
+  font-family: 'ionicons';
+  content: '\f2dd';
+  font-size: 26px;
+  color: #0ff;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+
+/* Styles au survol de l'icône de téléchargement */
+.dnbtn:hover:before {
+  display: none;
+}
+
+/* Styles pour le texte après le survol de l'icône de téléchargement */
+.dnbtn:hover:after {
+  font-family: Prompt;
+  content: 'DOWNLOAD';
+  color: #0ff;
+  font-size: 18px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+  animation: fadein .3s;
+}
+
+/* Styles au survol du bouton de téléchargement */
+.dnbtn:hover {
+  width: 160px;
+}
+
+/* Animation de fondu à l'entrée */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation de fondu à la sortie */
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Styles pour le bouton CSSButtons.io */
+.cssbuttons-io-button {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.5em 0.8em 1.2em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(77,54,208,1) 0%, rgba(132,116,254,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+}
+
+/* Styles pour l'icône dans le bouton CSSButtons.io */
+.cssbuttons-io-button svg {
+  margin-right: 8px;
+}
+
+/* Styles au survol du bouton CSSButtons.io */
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
+}
+
+/* Styles lors de l'appui sur le bouton CSSButtons.io */
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 5px; /* Ajoute un peu de marge sur les côtés */
+  }
+
+  header {
+    height: auto; /* Ajuste la hauteur de l'en-tête */
+    flex-direction: column; /* Passe à une disposition en colonne */
+  }
+
+  .menu-icon {
+    display: block; /* Affiche l'icône de menu */
+  }
+
+  nav {
+    display: none; /* Cache la navigation par défaut */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .StudentCard {
+    height: auto; /* Ajuste la hauteur de la carte d'étudiant */
+    flex-direction: column; /* Passe à une disposition en colonne */
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+  .dnbtn {
+    width: 100%; /* Utilise la pleine largeur de l'écran */
+    text-align: center;
+    position: static; /* Désactive la position absolue */
+    transform: none; /* Réinitialise la transformation */
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* Style du contenu du menu déroulant */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--background);
+  min-width: 90px;
+  z-index: 1;
+  
+}
+
+/* Style des liens du menu déroulant */
+.dropdown-content a {
+padding-bottom: 100px;
+padding-right: 50px;  
+text-decoration: none;
+  display: block;
+
+}
+
+/* Changement de couleur au survol */
+.dropdown-content a:hover {
+  background-color: var(--background);
+}
+
+/* Affiche le menu déroulant au survol */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 10%;
+}
+
+footer > * {
+  margin-bottom: 10px;
+}
+
+h1.Link {
+  padding-bottom: 50px;
+}

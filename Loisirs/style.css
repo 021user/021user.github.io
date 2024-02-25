@@ -1,0 +1,172 @@
+/* Importation des styles de base de Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Réinitialisation des styles de base */
+* {
+    box-sizing: border-box; /* La boîte inclut la bordure pour tous les éléments */
+    text-decoration: none; /* Pas de décoration de texte par défaut */
+    padding: 10px; /* Ajout d'un espace intérieur de 10px à tous les éléments */
+    margin: 0; /* Pas de marge par défaut */
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+    min-height: 120vh; /* Hauteur minimale du corps de la page */
+    color: var(--text); /* Couleur du texte */
+    background-color: var(--background); /* Couleur de fond */
+    font-family: "Open Sans", sans-serif; /* Police de caractères */
+    line-height: 1.25; /* Hauteur de ligne */
+}
+
+/* Définition des variables de couleur */
+:root {
+    --text: #1D1D1F; /* Noir presque complet pour le texte */
+    --background: #FAFAFA; /* Fond très clair, presque blanc */
+    --border: rgba(255, 255, 255, .25); /* Bordure blanche avec transparence */
+    --shadow: rgba(0, 0, 0, 0.25); /* Ombre noire avec transparence */
+}
+
+/* Styles pour HTML et BODY */
+html, body {
+    scroll-behavior: smooth; /* Transition en douceur pour le défilement */
+    width: 100%; /* Largeur de 100% */
+    height: 100%; /* Hauteur de 100% */
+}
+
+/* Styles pour l'en-tête */
+header {
+    display: flex; /* Affichage en tant que boîte flexible */
+    align-items: center; /* Alignement vertical au centre */
+    justify-content: center; /* Alignement horizontal au centre */
+    width: 100%; /* Largeur de 100% */
+    height: 100px; /* Hauteur de l'en-tête */
+    text-align: center; /* Alignement du texte au centre */
+}
+
+/* Styles pour la liste non ordonnée */
+ul {
+    display: flex; /* Affichage en tant que boîte flexible */
+    justify-content: space-around; /* Répartition équitable des éléments */
+    align-items: center; /* Alignement vertical au centre */
+    flex-direction: row; /* Alignement horizontal des éléments */
+    list-style-type: none; /* Pas de puces dans la liste */
+    width: 100%; /* Largeur de 100% */
+    height: 100%; /* Hauteur de 100% */
+}
+
+/* Styles pour les liens du menu */
+a.MENU {
+    color: var(--text); /* Couleur du texte */
+    display: flex; /* Affichage en tant que boîte flexible */
+    justify-content: center; /* Alignement horizontal au centre */
+    align-items: center; /* Alignement vertical au centre */
+    height: 100px; /* Hauteur du lien du menu */
+    width: 350px; /* Largeur du lien du menu */
+    transition: 0.3s; /* Transition de 0.3 seconde */
+}
+
+/* Styles pour le corps de la page (redondant, supprimez si nécessaire) */
+body {
+    font-family: "Open Sans", sans-serif; /* Police de caractères */
+    line-height: 1.25; /* Hauteur de ligne */
+}
+
+/* Styles pour les liens de navigation */
+nav a {
+    position: relative; /* Positionnement relatif pour des déplacements éventuels */
+    font-size: 1.1em; /* Taille de police */
+    color: var(--secondary); /* Couleur du texte secondaire */
+    text-decoration: none; /* Pas de décoration de texte par défaut */
+    padding: 6px 20px; /* Ajout d'un espace intérieur */
+    transition: 0.5s; /* Transition de 0.5 seconde */
+}
+
+/* Styles hover pour les liens de navigation */
+nav a:hover {
+    color: var(--accent); /* Couleur d'accentuation au survol */
+    transform: scale(1.2); /* Agrandissement au survol */
+}
+
+/* Styles pour la carte d'étudiant */
+.StudentCard {
+    position: relative; /* Positionnement relatif pour des déplacements éventuels */
+    height: 90%; /* Ajustement automatique de la hauteur */
+    width: 100%; /* Largeur de 100% */
+    display: flex; /* Affichage en tant que boîte flexible */
+    flex-direction: column; /* Alignement vertical des éléments */
+    align-items: center; /* Alignement horizontal au centre */
+    justify-content: space-between; /* Répartition équitable des éléments */
+}
+
+/* Styles pour le titre de la carte d'étudiant */
+.StudentCard h1 {
+    color: var(--text); /* Couleur du texte */
+    justify-content: center; /* Alignement horizontal au centre */
+}
+
+/* Styles pour la carte */
+.card {
+    /* Style de la carte */
+max-width: 2000px; /* Largeur maximale */
+min-height: 100px; /* Hauteur minimale */
+display: flex; /* Affichage en tant que boîte flexible */
+flex-direction: column; /* Alignement vertical des éléments */
+align-items: center; /* Alignement horizontal au centre */
+padding: 35px; /* Ajout d'un espace intérieur */
+border: 1px solid var(--border); /* Bordure avec transparence */
+border-radius: 20px; /* Bordures arrondies */
+background-color: rgba(0, 0, 0, 0.45); /* Fond semi-transparent avec correction pour la couleur */
+box-shadow: 0 0 20px 5px var(--shadow); /* Ombre de boîte */
+backdrop-filter: blur(15px); /* Filtre de flou en arrière-plan */
+opacity: 0.75; /* Opacité de la carte */
+}
+
+/* Styles pour le pied de page de la carte */
+.card-footer {
+    font-size: 1em; /* Taille de police */
+    font-weight: bold; /* Poids de la police */
+    color: var(--text); /* Couleur du texte */
+}
+
+/* Styles pour le pied de page */
+footer { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+  
+  /* Style du contenu du menu déroulant */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--background);
+    min-width: 90px;
+    z-index: 1;
+    
+  }
+  
+  /* Style des liens du menu déroulant */
+  .dropdown-content a {
+  padding-bottom: 100px;
+  padding-right: 50px;  
+  text-decoration: none;
+    display: block;
+  
+  }
+  
+  /* Changement de couleur au survol */
+  .dropdown-content a:hover {
+    background-color: var(--background);
+  }
+  
+  /* Affiche le menu déroulant au survol */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

@@ -1,0 +1,399 @@
+/* Importations Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Styles de réinitialisation globale */
+* {
+  box-sizing: border-box; /* La boîte inclut les bordures et le padding dans la largeur et la hauteur */
+  text-decoration: none;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Styles du corps de la page */
+body {
+  min-height: 120vh;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+/* Définition des variables de couleur */
+:root {
+  --text: #333333; /* Gris Foncé pour un texte clair et lisible */
+  --background: #FFFFFF; /* Blanc pour un fond propre et épuré */
+  --primary: #607D8B; /* Bleu Gris pour une touche de couleur discrète et professionnelle */
+  --secondary: #CFD8DC; /* Gris Bleu Clair pour les éléments secondaires, assurant une harmonie visuelle */
+  --accent: #78909C; /* Bleu Gris Plus Clair pour les accents, subtil mais distinct */
+  
+}
+
+/* Styles pour le scroll en douceur */
+html, body {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styles pour l'en-tête de la page */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+/* Styles pour la liste de navigation */
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styles pour le lien "MENU" dans la navigation */
+a.MENU {
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+/* Styles pour les liens de navigation */
+nav a {
+  position: relative;
+  font-size: 1.1em;
+  color: var(--secondary);  
+  text-decoration: none;
+  padding: 6px 20px;
+  transition: 0.5s;
+}
+
+/* Styles au survol des liens de navigation */
+nav a:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+/* Styles pour la carte d'étudiant */
+.StudentCard {
+  height: 60%;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles pour le titre de la carte d'étudiant */
+.StudentCard h1 {
+  color: #5b5959;
+  justify-content: center;
+}
+
+/* Styles pour la première carte d'information */
+.card1 {
+  max-width: 900px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 65px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(var(--text), 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  opacity: 0.75;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+/* Styles pour la section de contact */
+#caption {
+  padding: 45px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1.caption {
+  padding-top: 55px;
+}
+
+
+
+/* Styles pour le titre avec animation de clignotement */
+h1 span {
+  color: var(--accent);
+  position: relative;
+}
+
+/* Styles pour l'effet de clignotement */
+h1 span::before {
+  content: "";
+  height: 30px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  background: linear-gradient(0deg, rgba(77,54,208,1) 0%, rgba(132,116,254,1) 100%);
+  transform: translateY(-45%);
+  animation: blink 0.7s infinite;
+}
+
+/* Styles pour désactiver l'effet de clignotement */
+h1 span.stop-blinking::before {
+  animation: none;
+}
+
+/* Animation de clignotement */
+@keyframes blink {
+  50% { opacity: 0 }
+}
+
+/* Styles pour la boîte de l'IDE */
+.ide-container {
+  position: relative;
+  width: 400px; /* Ajustez la largeur de la boîte selon vos besoins */
+}
+
+/* Styles pour la section du pied de page */
+footer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Styles pour les éléments du pied de page */
+footer > * {
+  margin-bottom: 10px; /* Ajustez selon vos besoins */
+}
+
+/* Styles pour les titres et les paragraphes du pied de page */
+footer h1, p {
+  color: #5b5959;
+}
+
+/* Styles pour les icônes de portefeuille avec effet de survol */
+.Port {
+  width: 55px;
+  height: 55px;
+  transition: 0.5s;
+}
+
+.Port:hover {
+  transform: scale(1.3);
+}
+
+/* Styles pour le tableau */
+table {
+  border: 1px solid #ccc; 
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Styles pour le titre du tableau */
+.caption{
+  color: var(--text);
+}
+
+/* Styles pour les lignes du tableau */
+table tr {
+  background-color: var(--accent);
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+/* Styles pour les en-têtes et les cellules du tableau */
+table th, table td {
+  padding: .625em;
+  text-align: center;
+}
+
+/* Styles pour les en-têtes du tableau */
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* Media query pour les petits écrans */
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  /* Styles pour les titres du tableau sur les petits écrans */
+  table h1 {
+    font-size: 1.3em;
+  }
+
+  /* Styles pour l'en-tête du tableau sur les petits écrans */
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  /* Styles pour les lignes du tableau sur les petits écrans */
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  /* Styles pour les cellules du tableau sur les petits écrans */
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+
+  /* Styles pour les labels des cellules du tableau sur les petits écrans */
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  /* Styles pour la dernière ligne du tableau sur les petits écrans */
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* Styles généraux pour le corps de la page */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+/* Importations Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ... (les autres styles restent inchangés) */
+
+@media screen and (max-width: 600px) {
+  body {
+    padding: 5px; /* Ajoute un peu de marge sur les côtés */
+  }
+
+  header {
+    height: auto; /* Ajuste la hauteur de l'en-tête */
+    flex-direction: column; /* Passe à une disposition en colonne */
+  }
+
+  ul {
+    flex-direction: column; /* Passe à une disposition en colonne */
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    display: none; /* Cache la navigation par défaut */
+  }
+
+  ul.active {
+    display: flex;
+  }
+
+  ul li {
+    margin: 10px 0;
+  }
+
+  a.MENU {
+    width: 100%; /* Utilise la pleine largeur de l'écran */
+    text-align: center;
+  }
+
+  .StudentCard {
+    height: auto; /* Ajuste la hauteur de la carte d'étudiant */
+    flex-direction: column; /* Passe à une disposition en colonne */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card1 {
+    max-width: 100%; /* Utilise la pleine largeur de l'écran */
+  }
+
+  .container {
+    width: 100%; /* Utilise la pleine largeur de l'écran */
+    flex-direction: column; /* Passe à une disposition en colonne */
+  }
+
+  .container .card {
+    width: 100%; /* Utilise la pleine largeur de l'écran */
+  }
+
+  h1 {
+    padding-top: 20px; /* Ajuste l'espacement du haut */
+  }
+
+  .dnbtn {
+    width: 100%; /* Utilise la pleine largeur de l'écran */
+    text-align: center;
+    position: static; /* Désactive la position absolue */
+    transform: none; /* Réinitialise la transformation */
+  }
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+/* Style du contenu du menu déroulant */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--background);
+  min-width: 90px;
+  z-index: 1;
+  
+}
+
+/* Style des liens du menu déroulant */
+.dropdown-content a {
+padding-bottom: 100px;
+padding-right: 50px;  
+text-decoration: none;
+  display: block;
+
+}
+
+/* Changement de couleur au survol */
+.dropdown-content a:hover {
+  background-color: var(--background);
+}
+
+/* Affiche le menu déroulant au survol */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
