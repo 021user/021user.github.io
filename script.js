@@ -9,6 +9,7 @@ let charIndex = 0;
 
 let isDeleting = false;
 
+
 const typeEffect = () => {
     // Récupère le mot actuel à afficher
     const currentWord = words[wordIndex];
