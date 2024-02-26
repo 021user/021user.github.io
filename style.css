@@ -399,7 +399,16 @@ footer h1, p {
   h1.Link {
     padding-bottom: 20px; /* Espacement en dessous du lien pour une séparation claire */
   }
-  
+  footer {
+    display: flex;
+    justify-content: center; /* Centre les éléments du footer horizontalement */
+    align-items: center; /* Centre les éléments du footer verticalement */
+    flex-direction: column; /* Organise les éléments du footer en colonne pour les petits écrans */
+    width: 100%; /* Assure que le footer s'étend sur toute la largeur */
+    background-color: #f2f2f2; /* Couleur de fond pour le rendre visible (choisissez une couleur adaptée à votre design) */
+    padding: 20px 0; /* Ajoute un peu d'espacement à l'intérieur du footer */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur définie */
+  }
 }
 
 .dropdown {
@@ -419,15 +428,6 @@ footer h1, p {
   text-decoration: none; /* Supprime le soulignement des liens */
   display: block; /* Les liens occupent leur propre ligne */
 }
-footer {
-  display: flex;
-  justify-content: center; /* Centre les éléments du footer horizontalement */
-  align-items: center; /* Centre les éléments du footer verticalement */
-  flex-direction: column; /* Organise les éléments du footer en colonne pour les petits écrans */
-  width: 100%; /* Assure que le footer s'étend sur toute la largeur */
-  background-color: #f2f2f2; /* Couleur de fond pour le rendre visible (choisissez une couleur adaptée à votre design) */
-  padding: 20px 0; /* Ajoute un peu d'espacement à l'intérieur du footer */
-  box-sizing: border-box; /* Assure que le padding est inclus dans la largeur définie */
-}
+
 
 /* Assurez-vous que le footer est toujours au bas de la page, même si le contenu est court */
