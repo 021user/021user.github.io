@@ -405,6 +405,7 @@ footer h1, p {
     align-items: center; /* Centre les éléments du footer verticalement */
     flex-direction: column; /* Organise les éléments du footer en colonne pour les petits écrans */
     width: 100%; /* Assure que le footer s'étend sur toute la largeur */
+    height: 100%; /* Hauteur fixe pour le footer */
     background-color: #f2f2f2; /* Couleur de fond pour le rendre visible (choisissez une couleur adaptée à votre design) */
     padding: 20px 0; /* Ajoute un peu d'espacement à l'intérieur du footer */
     box-sizing: border-box; /* Assure que le padding est inclus dans la largeur définie */
@@ -416,8 +417,9 @@ footer h1, p {
 }
 
 .dropdown-content {
+  position: absolute;
+  bottom: 100%; /*
   display: none; /* Cache le contenu du menu déroulant par défaut */
-  position: absolute; /* Positionne absolument le menu déroulant par rapport à son parent */
   background-color: var(--background); /* Utilise une variable CSS pour la couleur de fond */
   min-width: 90px; /* Largeur minimale du menu déroulant */
   z-index: 1; /* S'assure que le menu déroulant apparaît au-dessus des autres éléments */
