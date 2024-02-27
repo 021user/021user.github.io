@@ -9,6 +9,14 @@
   visibility: visible;
 }
 
+footer {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
 /* Styles personnalisés */
 /* Reset des styles par défaut */
 * {
@@ -200,8 +208,8 @@ section.card {
 }
 
 /* Styles pour le titre global */
-h1 {
-  padding-top: 50px;
+h1.MC {
+  padding-top: 20px;
   font-family: "Open Sans", sans-serif;
   line-height: 1.25;
 }
@@ -442,7 +450,7 @@ h1 {
 
   header {
     height: auto; /* Ajuste la hauteur automatiquement selon le contenu */
-    flex-direction: column; /* Les éléments de l'en-tête sont disposés en colonne */
+    flex-direction: row; /* Les éléments de l'en-tête sont disposés en colonne */
   }
 
   .menu-icon {
@@ -464,69 +472,71 @@ h1 {
       margin: 5px 0; /* Espacement entre les liens pour une meilleure séparation */
       text-align: center; /* Le texte des liens est centré */
     }
-  }
 
-  nav.active {
-    display: flex; /* Assure que la navigation est visible lorsque le menu est actif */
-  }
-
-  .StudentCard {
-    height: auto; /* La hauteur s'ajuste au contenu */
-    flex-direction: column; /* Les éléments à l'intérieur de la carte sont disposés en colonne */
-    align-items: center; /* Centre les éléments de la carte */
-    justify-content: center; /* Centre verticalement les éléments si nécessaire */
-  }
-
-  .dnbtn {
-    width: 100%; /* Le bouton s'étend sur toute la largeur disponible */
-    text-align: center; /* Le texte à l'intérieur du bouton est centré */
-    position: static; /* Utilise le flux normal du document, sans positionnement absolu */
-    transform: none; /* Annule toute transformation appliquée précédemment */
-  }
-  html, body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    nav.active {
+      display: flex; /* Assure que la navigation est visible lorsque le menu est actif */
+    }
+  
+    .StudentCard {
+      height: auto; /* La hauteur s'ajuste au contenu */
+      flex-direction: column; /* Les éléments à l'intérieur de la carte sont disposés en colonne */
+      align-items: center; /* Centre les éléments de la carte */
+      justify-content: center; /* Centre verticalement les éléments si nécessaire */
+    }
+  
+    .dnbtn {
+      width: 100%; /* Le bouton s'étend sur toute la largeur disponible */
+      text-align: center; /* Le texte à l'intérieur du bouton est centré */
+      position: static; /* Utilise le flux normal du document, sans positionnement absolu */
+      transform: none; /* Annule toute transformation appliquée précédemment */
+    }
+    html, body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    body > *:not(footer) {
+      flex-grow: 1;
+    }
+    
+    
+    footer > * {
+      margin: 10px; /* Espacement autour des éléments du pied de page */
+    }
+    
+    h1.Link {
+      padding-bottom: 20px; /* Espacement en dessous du lien pour une séparation claire */
+    }
+    footer {
+      display: flex;
+      justify-content: center; /* Centre les éléments du footer horizontalement */
+      align-items: center; /* Centre les éléments du footer verticalement */
+      width: 100%; /* Assure que le footer s'étend sur toute la largeur */
+      background-color: #f2f2f2; /* Couleur de fond pour le rendre visible (choisissez une couleur adaptée à votre design) */
+      padding: 20px 0; /* Ajoute un peu d'espacement à l'intérieur du footer */
+      box-sizing: border-box; /* Assure que le padding est inclus dans la largeur définie */
+    }
+  
+  
+  .dropdown {
+    position: relative; /* Positionne le menu déroulant par rapport à son parent */
   }
   
-  body > *:not(footer) {
-    flex-grow: 1;
+  .dropdown-content {
+    display: none; /* Cache le contenu du menu déroulant par défaut */
+    position: absolute; /* Positionne absolument le menu déroulant par rapport à son parent */
+    background-color: var(--background); /* Utilise une variable CSS pour la couleur de fond */
+    min-width: 90px; /* Largeur minimale du menu déroulant */
+    z-index: 1; /* S'assure que le menu déroulant apparaît au-dessus des autres éléments */
   }
   
+  .dropdown-content a {
+    padding: 10px; /* Espacement autour des liens pour une meilleure accessibilité */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    display: block; /* Les liens occupent leur propre ligne */
+  }
+  }
+
   
-  footer > * {
-    margin: 10px; /* Espacement autour des éléments du pied de page */
-  }
-  
-  h1.Link {
-    padding-bottom: 20px; /* Espacement en dessous du lien pour une séparation claire */
-  }
-  footer {
-    display: flex;
-    justify-content: center; /* Centre les éléments du footer horizontalement */
-    align-items: center; /* Centre les éléments du footer verticalement */
-    flex-direction: column; /* Organise les éléments du footer en colonne pour les petits écrans */
-    width: 100%; /* Assure que le footer s'étend sur toute la largeur */
-    background-color: #f2f2f2; /* Couleur de fond pour le rendre visible (choisissez une couleur adaptée à votre design) */
-    padding: 20px 0; /* Ajoute un peu d'espacement à l'intérieur du footer */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur définie */
-  }
-}
-
-.dropdown {
-  position: relative; /* Positionne le menu déroulant par rapport à son parent */
-}
-
-.dropdown-content {
-  display: none; /* Cache le contenu du menu déroulant par défaut */
-  position: absolute; /* Positionne absolument le menu déroulant par rapport à son parent */
-  background-color: var(--background); /* Utilise une variable CSS pour la couleur de fond */
-  min-width: 90px; /* Largeur minimale du menu déroulant */
-  z-index: 1; /* S'assure que le menu déroulant apparaît au-dessus des autres éléments */
-}
-
-.dropdown-content a {
-  padding: 10px; /* Espacement autour des liens pour une meilleure accessibilité */
-  text-decoration: none; /* Supprime le soulignement des liens */
-  display: block; /* Les liens occupent leur propre ligne */
 }

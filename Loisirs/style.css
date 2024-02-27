@@ -5,168 +5,168 @@
 
 /* Réinitialisation des styles de base */
 * {
-    box-sizing: border-box; /* La boîte inclut la bordure pour tous les éléments */
-    text-decoration: none; /* Pas de décoration de texte par défaut */
-    padding: 10px; /* Ajout d'un espace intérieur de 10px à tous les éléments */
-    margin: 0; /* Pas de marge par défaut */
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0;
 }
 
 /* Styles généraux pour le corps de la page */
 body {
-    min-height: 120vh; /* Hauteur minimale du corps de la page */
-    color: var(--text); /* Couleur du texte */
-    background-color: var(--background); /* Couleur de fond */
-    font-family: "Open Sans", sans-serif; /* Police de caractères */
-    line-height: 1.25; /* Hauteur de ligne */
+    min-height: 120vh;
+    color: var(--text);
+    background-color: var(--background);
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+    padding: 5px; /* Ajuste pour mobile */
 }
 
-/* Définition des variables de couleur */
 :root {
-    --text: #1D1D1F; /* Noir presque complet pour le texte */
-    --background: #FAFAFA; /* Fond très clair, presque blanc */
-    --border: rgba(255, 255, 255, .25); /* Bordure blanche avec transparence */
-    --shadow: rgba(0, 0, 0, 0.25); /* Ombre noire avec transparence */
+    --text: #1D1D1F;
+    --background: #FAFAFA;
+    --border: rgba(255, 255, 255, .25);
+    --shadow: rgba(0, 0, 0, 0.25);
 }
 
-/* Styles pour HTML et BODY */
 html, body {
-    scroll-behavior: smooth; /* Transition en douceur pour le défilement */
-    width: 100%; /* Largeur de 100% */
-    height: 100%; /* Hauteur de 100% */
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Styles pour l'en-tête */
 header {
-    display: flex; /* Affichage en tant que boîte flexible */
-    align-items: center; /* Alignement vertical au centre */
-    justify-content: center; /* Alignement horizontal au centre */
-    width: 100%; /* Largeur de 100% */
-    height: 100px; /* Hauteur de l'en-tête */
-    text-align: center; /* Alignement du texte au centre */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto; /* Ajuste pour mobile */
+    flex-direction: column; /* Pour mobile */
 }
 
-/* Styles pour la liste non ordonnée */
 ul {
-    display: flex; /* Affichage en tant que boîte flexible */
-    justify-content: space-around; /* Répartition équitable des éléments */
-    align-items: center; /* Alignement vertical au centre */
-    flex-direction: row; /* Alignement horizontal des éléments */
-    list-style-type: none; /* Pas de puces dans la liste */
-    width: 100%; /* Largeur de 100% */
-    height: 100%; /* Hauteur de 100% */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
 }
 
-/* Styles pour les liens du menu */
 a.MENU {
-    color: var(--text); /* Couleur du texte */
-    display: flex; /* Affichage en tant que boîte flexible */
-    justify-content: center; /* Alignement horizontal au centre */
-    align-items: center; /* Alignement vertical au centre */
-    height: 100px; /* Hauteur du lien du menu */
-    width: 350px; /* Largeur du lien du menu */
-    transition: 0.3s; /* Transition de 0.3 seconde */
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 350px;
+    transition: 0.3s;
 }
 
-/* Styles pour le corps de la page (redondant, supprimez si nécessaire) */
-body {
-    font-family: "Open Sans", sans-serif; /* Police de caractères */
-    line-height: 1.25; /* Hauteur de ligne */
-}
-
-/* Styles pour les liens de navigation */
 nav a {
-    position: relative; /* Positionnement relatif pour des déplacements éventuels */
-    font-size: 1.1em; /* Taille de police */
-    color: var(--secondary); /* Couleur du texte secondaire */
-    text-decoration: none; /* Pas de décoration de texte par défaut */
-    padding: 6px 20px; /* Ajout d'un espace intérieur */
-    transition: 0.5s; /* Transition de 0.5 seconde */
+    position: relative;
+    font-size: 1.1em;
+    color: var(--secondary);
+    text-decoration: none;
+    padding: 6px 20px;
+    transition: 0.5s;
 }
 
-/* Styles hover pour les liens de navigation */
 nav a:hover {
-    color: var(--accent); /* Couleur d'accentuation au survol */
-    transform: scale(1.2); /* Agrandissement au survol */
+    color: var(--accent);
+    transform: scale(1.2);
 }
 
-/* Styles pour la carte d'étudiant */
 .StudentCard {
-    position: relative; /* Positionnement relatif pour des déplacements éventuels */
-    height: 90%; /* Ajustement automatique de la hauteur */
-    width: 100%; /* Largeur de 100% */
-    display: flex; /* Affichage en tant que boîte flexible */
-    flex-direction: column; /* Alignement vertical des éléments */
-    align-items: center; /* Alignement horizontal au centre */
-    justify-content: space-between; /* Répartition équitable des éléments */
+    position: relative;
+    height: auto; /* Pour mobile */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Styles pour le titre de la carte d'étudiant */
 .StudentCard h1 {
-    color: var(--text); /* Couleur du texte */
-    justify-content: center; /* Alignement horizontal au centre */
+    color: var(--text);
+    justify-content: center;
 }
 
-/* Styles pour la carte */
 .card {
-    /* Style de la carte */
-max-width: 2000px; /* Largeur maximale */
-min-height: 100px; /* Hauteur minimale */
-display: flex; /* Affichage en tant que boîte flexible */
-flex-direction: column; /* Alignement vertical des éléments */
-align-items: center; /* Alignement horizontal au centre */
-padding: 35px; /* Ajout d'un espace intérieur */
-border: 1px solid var(--border); /* Bordure avec transparence */
-border-radius: 20px; /* Bordures arrondies */
-background-color: rgba(0, 0, 0, 0.45); /* Fond semi-transparent avec correction pour la couleur */
-box-shadow: 0 0 20px 5px var(--shadow); /* Ombre de boîte */
-backdrop-filter: blur(15px); /* Filtre de flou en arrière-plan */
-opacity: 0.75; /* Opacité de la carte */
+    max-width: 2000px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 0 20px 5px var(--shadow);
+    backdrop-filter: blur(15px);
+    opacity: 0.75;
 }
 
-/* Styles pour le pied de page de la carte */
 .card-footer {
-    font-size: 1em; /* Taille de police */
-    font-weight: bold; /* Poids de la police */
-    color: var(--text); /* Couleur du texte */
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--text);
 }
 
-/* Styles pour le pied de page */
-footer { 
+footer {
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
   }
-
-  .dropdown {
-    position: relative;
-  }
   
-  /* Style du contenu du menu déroulant */
-  .dropdown-content {
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: var(--background);
     min-width: 90px;
     z-index: 1;
-    
-  }
-  
-  /* Style des liens du menu déroulant */
-  .dropdown-content a {
-  padding-bottom: 100px;
-  padding-right: 50px;  
-  text-decoration: none;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    text-decoration: none;
     display: block;
-  
-  }
-  
-  /* Changement de couleur au survol */
-  .dropdown-content a:hover {
-    background-color: var(--background);
-  }
-  
-  /* Affiche le menu déroulant au survol */
-  .dropdown:hover .dropdown-content {
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
-  }
+}
+
+/* Media Queries pour les écrans jusqu'à 600px */
+@media only screen and (max-width: 600px) {
+    header, nav ul, .StudentCard, footer {
+        flex-direction: column;
+    }
+
+    nav ul {
+        width: 100%;
+    }
+
+    nav a {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+    }
+
+    body > *:not(footer), footer > *, .card {
+        width: 100%; /* Assure que les éléments s'étendent sur toute la largeur */
+        padding: 0 5px; /* Ajoute un peu d'espacement */
+    }
+}
